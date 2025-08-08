@@ -44,6 +44,7 @@
       border-radius: 5px;
       font-weight: bold;
       transition: background-color 0.3s ease;
+      cursor: pointer;
     }
     .btn:hover {
       background-color: #e6830a;
@@ -73,9 +74,13 @@
   </style>
   <script>
     function buscarEndereco() {
-      const endereco = document.getElementById("enderecoInput").value;
-      const mapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(endereco)}+lojas+chumbada+oficial`;
-      window.open(mapsUrl, '_blank');
+      const endereco = document.getElementById("enderecoInput").value.trim();
+      if (endereco) {
+        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(endereco + ' loja chumbada oficial')}`;
+        window.open(mapsUrl, '_blank');
+      } else {
+        alert("Por favor, digite um endereço ou cidade.");
+      }
     }
   </script>
 </head>
@@ -89,7 +94,7 @@
     <p>Digite seu endereço ou cidade para buscar a loja mais próxima:</p>
     <input type="text" id="enderecoInput" placeholder="Ex: Rua Silvana, SP">
     <div>
-      <a href="#" class="btn" onclick="buscarEndereco()">Buscar Loja Próxima</a>
+      <span class="btn" onclick="buscarEndereco()">Buscar Loja Próxima</span>
     </div>
     <p style="margin-top:30px">Ou veja no mapa abaixo:</p>
     <iframe src="https://www.google.com/maps/d/embed?mid=11JpjrM0MR6OUAncu-V0REgjq8WnMC7E&ehbc=2E312F"></iframe>
