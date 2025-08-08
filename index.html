@@ -76,7 +76,7 @@
     function buscarEndereco() {
       const endereco = document.getElementById("enderecoInput").value.trim();
       if (endereco) {
-        const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(endereco + ' loja chumbada oficial')}`;
+        const mapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(endereco)}`;
         window.open(mapsUrl, '_blank');
       } else {
         alert("Por favor, digite um endereço ou cidade.");
