@@ -72,17 +72,6 @@
       margin-top: 40px;
     }
   </style>
-  <script>
-    function buscarEndereco() {
-      const endereco = document.getElementById("enderecoInput").value.trim();
-      if (endereco) {
-        const mapsUrl = `https://www.google.com/maps/search/${encodeURIComponent(endereco)}`;
-        window.open(mapsUrl, '_blank');
-      } else {
-        alert("Por favor, digite um endereço ou cidade.");
-      }
-    }
-  </script>
 </head>
 <body>
   <header>
@@ -91,12 +80,7 @@
 
   <section>
     <h1>Encontre nossas lojas parceiras</h1>
-    <p>Digite seu endereço ou cidade para buscar a loja mais próxima:</p>
-    <input type="text" id="enderecoInput" placeholder="Ex: Rua Silvana, SP">
-    <div>
-      <span class="btn" onclick="buscarEndereco()">Buscar Loja Próxima</span>
-    </div>
-    <p style="margin-top:30px">Ou veja no mapa abaixo:</p>
+    <p>Digite seu endereço ou cidade no Google Maps para buscar a loja mais próxima, ou veja no mapa abaixo:</p>
     <iframe src="https://www.google.com/maps/d/embed?mid=11JpjrM0MR6OUAncu-V0REgjq8WnMC7E&ehbc=2E312F"></iframe>
   </section>
 
