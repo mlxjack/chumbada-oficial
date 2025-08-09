@@ -1,98 +1,269 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Onde Encontrar - Chumbada Oficial</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Onde Encontrar | Chumbada Oficial</title>
+  <meta name="description" content="Encontre lojas com produtos Chumbada Oficial e baixe nossos catálogos de chumbadas, acessórios e iscas." />
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('bg-chumbada.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: #003366;
+    :root{
+      --brand-blue:#0A4C8A;         /* azul da marca (tipografia) */
+      --brand-light:#28A9C0;        /* azul claro */
+      --brand-orange:#F39A23;       /* laranja da marca */
+      --ink:#0f172a;                /* azul bem escuro p/ texto */
+      --bg:#ffffff;
+      --muted:#eff6ff;
+      --radius:18px;
+      --shadow:0 10px 25px rgba(10,76,138,.08);
     }
-    header {
-      background-color: rgba(255, 255, 255, 0.95);
-      padding: 20px;
-      text-align: center;
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Helvetica,Arial,sans-serif;
+      color:var(--ink); background:var(--bg);
     }
-    header img {
-      max-width: 300px;
+
+    /* Header */
+    .header{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter:saturate(140%) blur(6px);
+      background:rgba(255,255,255,.8);
+      border-bottom:1px solid #e5eef7;
     }
-    section {
-      background-color: rgba(255, 255, 255, 0.95);
-      margin: 40px auto;
-      padding: 40px 20px;
-      width: 90%;
-      max-width: 1000px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      text-align: center;
+    .wrap{max-width:1100px; margin:0 auto; padding:18px 20px}
+    .brand{
+      display:flex; align-items:center; gap:14px;
     }
-    h1 {
-      color: #003366;
-      margin-bottom: 20px;
+    .brand img{height:52px; width:auto}
+    .brand h1{
+      margin:0; font-size:clamp(18px,3vw,26px); line-height:1.1; font-weight:800;
+      color:var(--brand-blue); letter-spacing:.3px;
     }
-    .btn {
-      display: inline-block;
-      background-color: #f7941e;
-      color: white;
-      padding: 15px 30px;
-      margin: 10px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-      cursor: pointer;
+    .brand h1 .sub{
+      display:block; font-weight:700; color:var(--brand-orange); font-size:.78em; letter-spacing:.6px;
     }
-    .btn:hover {
-      background-color: #e6830a;
+
+    /* Hero */
+    .hero{
+      background:
+        radial-gradient(80% 120% at 20% -10%, rgba(40,169,192,.15), transparent 60%),
+        radial-gradient(70% 120% at 100% -20%, rgba(243,154,35,.10), transparent 60%),
+        linear-gradient(180deg, #fff, #fbfdff 50%, #ffffff);
+      border-bottom:1px solid #eaf3fb;
     }
-    input[type="text"] {
-      padding: 10px;
-      width: 80%;
-      max-width: 500px;
-      margin-top: 15px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+    .hero-inner{
+      display:grid; grid-template-columns:1.1fr .9fr; gap:22px; align-items:center;
     }
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 10px;
-      margin-top: 20px;
+    .hero h2{
+      font-size:clamp(24px,4.2vw,40px); margin:10px 0 10px; color:var(--brand-blue);
     }
-    footer {
-      background-color: #f7941e;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
+    .hero p{font-size:clamp(14px,2.2vw,17px); margin:0 0 16px; color:#234}
+    .cta-row{display:flex; flex-wrap:wrap; gap:10px}
+    .btn{
+      appearance:none; border:0; cursor:pointer; text-decoration:none;
+      padding:12px 18px; border-radius:999px; font-weight:700; font-size:15px;
+      display:inline-flex; align-items:center; gap:10px; box-shadow:var(--shadow);
+      transition:transform .05s ease, box-shadow .2s ease, opacity .2s ease;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn.orange{background:var(--brand-orange); color:#1b1b1b}
+    .btn.hollow{
+      background:#fff; color:var(--brand-blue); border:2px solid var(--brand-blue);
+      box-shadow:none;
+    }
+
+    .card{
+      background:#fff; border-radius:var(--radius); box-shadow:var(--shadow); padding:16px;
+      border:1px solid #eaf3fb;
+    }
+
+    /* Map section */
+    .section{padding:32px 20px}
+    .section h3{
+      margin:0 0 14px; color:var(--brand-blue);
+      font-size:clamp(18px,3.2vw,26px)
+    }
+    .map-card iframe{
+      width:100%; min-height:480px; border:0; border-radius:14px;
+    }
+    .legend{
+      display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:10px; font-size:14px; color:#345;
+    }
+    .legend .dot{width:12px; height:12px; border-radius:999px; display:inline-block}
+    .dot.orange{background:var(--brand-orange)} .dot.blue{background:var(--brand-light)}
+
+    /* Catalogs */
+    .grid{
+      display:grid; gap:16px;
+      grid-template-columns:repeat(3,1fr);
+    }
+    .catalog{
+      display:flex; flex-direction:column; gap:10px; justify-content:space-between;
+      min-height:180px; background:linear-gradient(180deg,#fff, #f9fcff);
+    }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size:13px; font-weight:700; letter-spacing:.3px; color:#093;
+      background:#eafff1; border:1px dashed #bff2d1; padding:6px 10px; border-radius:999px;
+      width:max-content;
+    }
+    .catalog h4{margin:2px 0 4px; color:var(--brand-blue)}
+    .catalog p{margin:0; color:#345; font-size:14px}
+    .catalog .actions{display:flex; gap:10px; margin-top:8px; flex-wrap:wrap}
+    .pill{
+      border-radius:999px; padding:10px 14px; text-decoration:none; font-weight:700; font-size:14px;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .pill.primary{background:var(--brand-blue); color:#fff}
+    .pill.secondary{background:var(--brand-orange); color:#1b1b1b}
+
+    /* Footer */
+    .footer{
+      border-top:1px solid #eaf3fb; padding:28px 20px; background:#fff; color:#335;
+      font-size:14px;
+    }
+    .footer .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+    .credit{opacity:.8}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero-inner{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .map-card iframe{min-height:400px}
+    }
+    @media (max-width:640px){
+      .grid{grid-template-columns:1fr}
+      .tag{font-size:12px}
+      .btn{width:100%; justify-content:center}
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="Logo-chumbada-OFICIAL-horizonatal-2.png" alt="Chumbada Oficial">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="wrap">
+      <div class="brand">
+        <img src="Logo-chumbada-OFICIAL-horizonatal-2.png" alt="Logotipo Chumbada Oficial">
+        <h1>Chumbada Oficial <span class="sub">Encontre lojas & baixe catálogos</span></h1>
+      </div>
+    </div>
   </header>
 
-  <section>
-    <h1>Encontre nossas lojas parceiras</h1>
-    <p>Digite seu endereço ou cidade no Google Maps para buscar a loja mais próxima, ou veja no mapa abaixo:</p>
-    <iframe src="https://www.google.com/maps/d/embed?mid=11JpjrM0MR6OUAncu-V0REgjq8WnMC7E&ehbc=2E312F"></iframe>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-inner">
+      <div>
+        <h2>Onde encontrar <span style="color:var(--brand-orange)">Chumbada Oficial</span></h2>
+        <p>Veja no mapa as lojas parceiras pelo Brasil e faça o download dos nossos catálogos atualizados de chumbadas, acessórios e iscas.</p>
+        <div class="cta-row">
+          <a class="btn orange" href="#mapa">Ver mapa das lojas</a>
+          <a class="btn hollow" href="#catalogos">Baixar catálogos</a>
+        </div>
+      </div>
+      <div class="card" style="background:linear-gradient(140deg,#fff,#f1fbff 60%);">
+        <img src="Logo-chumbada-OFICIAL-horizonatal-2.png" alt="Chumbada Oficial" style="width:100%;max-width:520px;display:block;margin:0 auto;">
+      </div>
+    </div>
   </section>
 
-  <section>
-    <h1>Baixe nossos catálogos</h1>
-    <a href="https://mega.nz/file/TJZXibBT#Wz2OP_1CnHSJk4rb16UHCKxyOcoOujUfr4xzTPAwHPs" class="btn" target="_blank">Catálogo de Chumbadas</a>
-    <a href="https://mega.nz/file/KNxTUBAb#5GQ8GRHHavazrZA_exPfHzUGXsZL1wFg97KaBWZ85U8" class="btn" target="_blank">Catálogo de Acessórios</a>
-    <a href="https://mega.nz/file/PUZAGK6R#DZFGHdcCufWLMQGLZ_OsnLI8K-t06IZxUAG88zHDVC4" class="btn" target="_blank">Catálogo de Iscas</a>
+  <!-- Mapa -->
+  <section id="mapa" class="section">
+    <div class="wrap">
+      <h3>Mapa das Lojas Parceiras</h3>
+      <div class="card map-card">
+        <!-- IMPORTANTE: usar /embed em vez de /viewer para funcionar dentro do site -->
+        <iframe
+          title="Lojas com Chumbada Oficial"
+          src="https://www.google.com/maps/d/u/1/embed?mid=11JpjrM0MR6OUAncu-V0REgjq8WnMC7E&ll=-17.60008680551716%2C-44.166546400000016&z=5&ehbc=2E312F"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+        <div class="legend">
+          <span class="dot blue"></span> Lojas ativas
+          <span class="dot orange"></span> Novos parceiros em breve
+        </div>
+        <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+          <a class="pill primary" target="_blank"
+             href="https://www.google.com/maps/d/u/1/viewer?mid=11JpjrM0MR6OUAncu-V0REgjq8WnMC7E&ll=-17.60008680551716%2C-44.166546400000016&z=5">
+            Abrir no Google Maps
+          </a>
+          <a class="pill secondary" href="#catalogos">Ir para os catálogos</a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Chumbada Oficial. Todos os direitos reservados.</p>
+  <!-- Catálogos -->
+  <section id="catalogos" class="section" style="background:linear-gradient(180deg,#ffffff,#f7fbff)">
+    <div class="wrap">
+      <h3>Catálogos Chumbada Oficial</h3>
+      <div class="grid">
+        <!-- Chumbadas -->
+        <article class="card catalog">
+          <span class="tag">Atualizado</span>
+          <div>
+            <h4>Catálogo de Chumbadas</h4>
+            <p>Toda a linha de chumbadas, pesos e modelos para diversas modalidades.</p>
+          </div>
+          <div class="actions">
+            <a class="pill primary" target="_blank"
+               href="https://mega.nz/file/TJZXibBT#Wz2OP_1CnHSJk4rb16UHCKxyOcoOujUfr4xzTPAwHPs">Abrir</a>
+            <a class="pill secondary" target="_blank"
+               href="https://mega.nz/file/TJZXibBT#Wz2OP_1CnHSJk4rb16UHCKxyOcoOujUfr4xzTPAwHPs">Baixar</a>
+          </div>
+        </article>
+
+        <!-- Acessórios -->
+        <article class="card catalog">
+          <span class="tag">Completo</span>
+          <div>
+            <h4>Catálogo de Acessórios</h4>
+            <p>Ferramentas, organizadores e itens que facilitam sua pescaria.</p>
+          </div>
+          <div class="actions">
+            <a class="pill primary" target="_blank"
+               href="https://mega.nz/file/KNxTUBAb#5GQ8GRHHavazrZA_exPfHzUGXsZL1wFg97KaBWZ85U8">Abrir</a>
+            <a class="pill secondary" target="_blank"
+               href="https://mega.nz/file/KNxTUBAb#5GQ8GRHHavazrZA_exPfHzUGXsZL1wFg97KaBWZ85U8">Baixar</a>
+          </div>
+        </article>
+
+        <!-- Iscas -->
+        <article class="card catalog">
+          <span class="tag">Novidades</span>
+          <div>
+            <h4>Catálogo de Iscas</h4>
+            <p>Iscas selecionadas para água doce e salgada, com alta performance.</p>
+          </div>
+          <div class="actions">
+            <a class="pill primary" target="_blank"
+               href="https://mega.nz/file/PUZAGK6R#DZFGHdcCufWLMQGLZ_OsnLI8K-t06IZxUAG88zHDVC4">Abrir</a>
+            <a class="pill secondary" target="_blank"
+               href="https://mega.nz/file/PUZAGK6R#DZFGHdcCufWLMQGLZ_OsnLI8K-t06IZxUAG88zHDVC4">Baixar</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="wrap">
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="Logo-chumbada-OFICIAL-horizonatal-2.png" alt="Chumbada Oficial" style="height:30px">
+        <strong>Chumbada Oficial</strong>
+      </div>
+      <div class="credit">© <span id="y"></span> Chumbada Oficial — Todos os direitos reservados.</div>
+    </div>
   </footer>
+
+  <script>
+    // Ano automático no rodapé
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
