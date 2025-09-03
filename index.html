@@ -45,6 +45,22 @@
     .btn-primary{background:linear-gradient(180deg,var(--cy),var(--cy2));color:#000 !important;box-shadow:0 10px 26px rgba(0,225,255,.25)}
     .btn-ghost{background:rgba(255,255,255,.06)}
 
+    
+    /* Mobile menu */
+    .menu-toggle{display:none;gap:6px;flex-direction:column;justify-content:center;align-items:center;
+      width:42px;height:42px;border-radius:10px;border:1px solid rgba(255,255,255,.12);
+      background:rgba(255,255,255,.06);cursor:pointer;margin-right:10px}
+    .menu-toggle span{display:block;width:22px;height:2px;background:#cfefff;border-radius:2px}
+    @media(max-width:860px){
+      .menu-toggle{display:inline-flex}
+      .nav{position:relative}
+      .menu{display:none;position:absolute;top:100%;left:0;right:0;padding:14px 22px 20px;
+        background:rgba(7,11,16,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08);
+        flex-direction:column;gap:14px}
+      .menu.open{display:flex}
+      .site-header .btn.btn-primary{margin-left:auto}
+    }
+
     /* Hero */
     .hero{position:relative;isolation:isolate;text-align:center}
     .hero-wrap{padding:66px 0 36px}
@@ -82,8 +98,9 @@
   <!-- Header -->
   <header class="site-header">
     <div class="container nav">
-      <a class="logo" href="#top"><img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Logo-chumbada-OFICIAL-horizonatal-2_f758e5db-514c-4559-8549-94cd56f40ef7.png?v=1756759937" alt="Chumbada Oficial"/></a>
-      <nav class="spacer menu">
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
+<a class="logo" href="#top"><img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Logo-chumbada-OFICIAL-horizonatal-2_f758e5db-514c-4559-8549-94cd56f40ef7.png?v=1756759937" alt="Chumbada Oficial"/></a>
+      <nav id="site-menu" class="spacer menu">
         <a href="#ondecomprar">Onde comprar</a>
         <a href="#lancamentos">Lançamentos</a>
         <a href="#catalogos">Catálogos</a>
