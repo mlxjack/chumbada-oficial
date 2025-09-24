@@ -99,7 +99,7 @@
   <header class="site-header">
     <div class="container nav">
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
-<a class="logo" href="#top"><img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Logo-chumbada-OFICIAL-horizonatal-2_f758e5db-514c-4559-8549-94cd56f40ef7.png?v=1756759937" alt="Chumbada Oficial"/></a>
+      <a class="logo" href="#top"><img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Logo-chumbada-OFICIAL-horizonatal-2_f758e5db-514c-4559-8549-94cd56f40ef7.png?v=1756759937" alt="Chumbada Oficial"/></a>
       <nav id="site-menu" class="spacer menu">
         <a href="#ondecomprar">Onde comprar</a>
         <a href="#lancamentos">Lançamentos</a>
@@ -129,6 +129,15 @@
           <span class="chip">⚡ Entrega nacional</span>
           <span class="chip">🧪 Performance testada</span>
         </div>
+      </div>
+    </section>
+
+    <!-- CTA JOGO DAS ISCAS (logo acima de Onde Comprar) -->
+    <section class="section" style="padding-top:20px; padding-bottom:0;">
+      <div class="container" style="text-align:center;">
+        <a class="btn btn-primary" href="https://mlxjack.github.io/jogodasiscas/" target="_blank" style="font-size:18px; padding:16px 28px;">
+          🎣 Jogar Desafio das Iscas — Quem ficar em #1 ganha um prêmio!
+        </a>
       </div>
     </section>
 
@@ -164,9 +173,9 @@
         <h2>Catálogos oficiais</h2>
         <div class="stripe"></div>
         <div class="grid cols-3">
-          <article class="card"><div class="card-body"><h3>Catálogo de Iscas</h3><p>Soft baits para água doce e salgada.</p><div class="actions"><a class="btn btn-primary" href="https://www.chumbada.com.br/_files/ugd/ff480f_9629879b9e6c4f87b419ebf65ff74a03.pdf" target="_blank">Baixar PDF</a></div></div></article>
+          <article class="card"><div class="card-body"><h3>Catálogo de Iscas</h3><p>Soft baits para água doce e salgada.</p><div class="actions"><a class="btn btn-primary" href="https://mega.nz/file/rAAjESTT#ky3k0vBot902lafkTwBoTiVAeveia6XkwivUPNjC53Y" target="_blank">Baixar PDF</a></div></div></article>
           <article class="card"><div class="card-body"><h3>Catálogo de Acessórios</h3><p>Ferramentas e utilidades.</p><div class="actions"><a class="btn btn-primary" href="https://www.chumbada.com.br/_files/ugd/ff480f_0b4c68b7d8d042fb8bd1e0366054cce7.pdf" target="_blank">Baixar PDF</a></div></div></article>
-          <article class="card"><div class="card-body"><h3>Catálogo de Chumbadas</h3><p>Modelos para cada técnica e condição.</p><div class="actions"><a class="btn btn-primary" href="https://www.chumbada.com.br/_files/ugd/ff480f_18d7d9a254b74c00bfa4254064c21834.pdf" target="_blank">Baixar PDF</a></div></div></article>
+          <article class="card"><div class="card-body"><h3>Catálogo de Chumbadas</h3><p>Modelos para cada técnica e condição.</p><div class="actions"><a class="btn btn-primary" href="https://mega.nz/file/KVxH2S5Y#x5KzKqnaUx0-LuNNF10Ut4PgRF_VprjSUKtmADm8TDI" target="_blank">Baixar PDF</a></div></div></article>
         </div>
       </div>
     </section>
@@ -184,12 +193,12 @@
           <li>Produção em até 15 dias úteis.</li>
         </ul>
 
-    <!-- Botão para lojistas -->
-    <div class="cta-row">
-      <a class="btn btn-primary" href="https://chumbadas.com.br/" target="_blank">
-        Comprar como lojista
-      </a>
-    </div>
+        <!-- Botão para lojistas -->
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://chumbadas.com.br/" target="_blank">
+            Comprar como lojista
+          </a>
+        </div>
 
       </div>
     </section>
@@ -239,4 +248,26 @@
     <div class="container" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between">
       <div>© <span id="year"></span> Chumbada Oficial — Todos os direitos reservados</div>
       <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a href="https://chumbadas.com.br/pages/contato" target="_
+        <a href="https://chumbadas.com.br/pages/contato" target="_blank" rel="noopener">Contato</a>
+        <a href="#catalogos">Catálogos</a>
+        <a href="#ondecomprar">Onde comprar</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle do menu mobile
+    const toggle = document.querySelector('.menu-toggle');
+    const menu = document.getElementById('site-menu');
+    if (toggle && menu) {
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
+      });
+    }
+    // Ano no rodapé
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
