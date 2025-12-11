@@ -3,354 +3,460 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chumbada Oficial — Hotsite</title>
-  <meta name="description" content="Hotsite oficial com mapa de revendas, lançamentos, catálogos, contato e informações para lojistas." />
-
-  <!-- Fonts -->
+  <title>Chumbada Oficial | Performance e Precisão na Pesca Esportiva</title>
+  <meta name="description" content="Fabricante líder em chumbadas, jig heads e iscas soft. Produtos de alta performance para pesca esportiva. Venda exclusiva para lojistas e distribuidores." />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#070b10; --bg2:#0c1219; --fg:#e8f6ff; --muted:#9db3c9;
-      --cy:#00e1ff; --cy2:#00a9ff; --or:#ff6b00;
-      --radius:18px; --shadow:0 14px 40px rgba(0,0,0,.35);
+    /* --- VARIÁVEIS E RESET --- */
+    :root {
+      --primary: #006FB9; /* Azul Profundo */
+      --primary-light: #38BDF8; /* Azul Claro */
+      --accent: #F97316; /* Laranja */
+      --dark: #0F172A; /* Texto Escuro */
+      --gray: #64748B;
+      --bg-body: #F8FAFC;
+      --radius: 12px;
+      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+      --container: 1240px;
     }
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; color:var(--fg);
-      font:400 16px/1.65 "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      background:
-        radial-gradient(1200px 900px at 110% -10%, rgba(0,225,255,.13), transparent 60%),
-        radial-gradient(900px 700px at -10% 10%, rgba(255,107,0,.10), transparent 60%),
-        linear-gradient(180deg,var(--bg),var(--bg2));
-      overflow-x:hidden;
-    }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-    .container{max-width:1200px;margin:0 auto;padding:0 22px}
-
-    /* Header */
-    .site-header{position:sticky;top:0;z-index:50;background:rgba(7,11,16,.66);backdrop-filter:blur(10px) saturate(140%);border-bottom:1px solid rgba(255,255,255,.08)}
-    .nav{display:flex;align-items:center;gap:20px;padding:14px 0}
-    .logo img{height:36px}
-    .spacer{flex:1}
-    .menu{display:flex;gap:18px;flex-wrap:wrap}
-    .menu a{color:var(--muted);font-weight:700}
-    .menu a:hover{color:#fff}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:999px;font-weight:900;letter-spacing:.2px;border:1px solid rgba(255,255,255,.12)}
-    .btn-primary{background:linear-gradient(180deg,var(--cy),var(--cy2));color:#000 !important;box-shadow:0 10px 26px rgba(0,225,255,.25)}
-    .btn-ghost{background:rgba(255,255,255,.06)}
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     
-    /* Mobile menu */
-    .menu-toggle{display:none;gap:6px;flex-direction:column;justify-content:center;align-items:center;
-      width:42px;height:42px;border-radius:10px;border:1px solid rgba(255,255,255,.12);
-      background:rgba(255,255,255,.06);cursor:pointer;margin-right:10px}
-    .menu-toggle span{display:block;width:22px;height:2px;background:#cfefff;border-radius:2px}
-    @media(max-width:860px){
-      .menu-toggle{display:inline-flex}
-      .nav{position:relative}
-      .menu{display:none;position:absolute;top:100%;left:0;right:0;padding:14px 22px 20px;
-        background:rgba(7,11,16,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08);
-        flex-direction:column;gap:14px}
-      .menu.open{display:flex}
-      .site-header .btn.btn-primary{margin-left:auto}
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-body);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* Hero */
-    .hero{position:relative;isolation:isolate;text-align:center}
-    .hero-wrap{padding:66px 0 36px}
-    .hero h1{font-family:"Bebas Neue";font-size:clamp(40px,8vw,96px);line-height:.92;margin:0}
-    .hero .sub{color:var(--muted);max-width:72ch;margin:12px auto}
-    .hero-logo{width:min(760px,90%);margin:20px auto 0;filter:drop-shadow(0 18px 40px rgba(0,225,255,.12))}
-    .cta-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
-    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);font-weight:700;color:#cfefff;margin:6px}
+    h1, h2, h3 { font-family: 'Bebas Neue', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-    /* Sections */
-    section{scroll-margin-top:90px}
-    .section{padding:64px 0}
-    .section h2{font-family:"Bebas Neue";font-size:clamp(28px,4.6vw,52px);margin:0 0 10px}
-    .kicker{color:var(--muted);margin:0 0 12px}
-    .stripe{height:2px;background:linear-gradient(90deg,transparent,var(--cy),transparent);filter:drop-shadow(0 4px 14px rgba(0,225,255,.6));margin:12px 0 22px}
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+    
+    /* --- BOTÕES --- */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 28px; border-radius: 50px; font-weight: 700; font-size: 1rem;
+      cursor: pointer; transition: all 0.3s ease; border: none;
+    }
+    
+    /* CORREÇÃO DO BOTÃO PRINCIPAL (Texto Branco) */
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #0284c7);
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
+    }
+    .btn-primary i {
+      color: #ffffff !important;
+      font-size: 1.2rem;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4); opacity: 0.95; }
+    
+    .btn-accent {
+      background: var(--accent); color: white;
+      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
+    }
+    .btn-accent:hover { background: #ea580c; transform: translateY(-2px); }
 
-    /* Cards */
-    .grid{display:grid;gap:18px}
-    .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-    @media(max-width:1000px){.cols-3{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:640px){.grid{grid-template-columns:1fr}}
-    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s ease}
-    .card:hover{transform:translateY(-4px) scale(1.01)}
-    .card-media{display:flex;align-items:center;justify-content:center;background:radial-gradient(120% 140% at 100% 0%, rgba(0,225,255,.18), transparent 60%)}
-    .card-media img{width:auto;max-width:100%;max-height:240px;object-fit:contain}
-    .card-body{padding:18px;text-align:center}
-    .card h3{margin:0 0 6px;font-size:20px}
-    .card p{margin:0;color:var(--muted)}
+    .btn-outline {
+      border: 2px solid var(--primary); color: var(--primary); background: transparent;
+    }
+    .btn-outline:hover { background: var(--primary); color: white; }
 
-    footer{border-top:1px solid rgba(255,255,255,.08);padding:26px 0 60px;color:var(--muted)}
+    /* --- TYPOGRAPHY --- */
+    .section-title {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      text-align: center; margin-bottom: 10px; color: var(--dark);
+      line-height: 1;
+    }
+    .section-subtitle {
+      text-align: center; color: var(--gray); margin-bottom: 40px; font-size: 1.1rem;
+    }
+    .badge {
+      background: rgba(56, 189, 248, 0.1); color: var(--primary);
+      padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.5px;
+    }
+
+    /* --- HEADER --- */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.05); padding: 16px 0;
+    }
+    .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
+    .logo img { height: 42px; }
+    
+    .desktop-menu { display: flex; gap: 32px; align-items: center; }
+    .desktop-menu a:not(.btn) { font-weight: 600; font-size: 0.95rem; color: var(--gray); position: relative; }
+    .desktop-menu a:not(.btn):hover { color: var(--primary); }
+
+    .menu-btn-mobile { display: none; font-size: 2rem; color: var(--dark); background: none; border: none; cursor: pointer; }
+
+    /* --- HERO --- */
+    .hero {
+      position: relative; padding: 100px 0 60px; overflow: hidden;
+      background: radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.1) 0%, transparent 40%);
+    }
+    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .hero-content h1 {
+      font-size: clamp(3.5rem, 6vw, 6rem); line-height: 0.9; margin-bottom: 24px;
+      background: linear-gradient(180deg, var(--dark), var(--primary));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero-content p { font-size: 1.25rem; color: var(--gray); margin-bottom: 32px; max-width: 500px; }
+    
+    .hero-image img { 
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15)); 
+      transform: perspective(1000px) rotateY(-10deg); 
+      transition: 0.5s; 
+    }
+    .hero-image:hover img { transform: perspective(1000px) rotateY(0deg) scale(1.02); }
+
+    /* --- AUDIENCE SELECTOR --- */
+    .audience-bar {
+      margin-top: -40px; position: relative; z-index: 10;
+      background: white; border-radius: 20px; box-shadow: var(--shadow);
+      padding: 30px; display: grid; grid-template-columns: 1fr 1px 1fr; gap: 20px;
+    }
+    .audience-divider { background: #eee; height: 100%; width: 1px; }
+    .audience-option { text-align: center; }
+    .audience-option h3 { color: var(--primary); font-size: 1.8rem; margin-bottom: 8px; }
+
+    /* --- SOCIAL SECTION --- */
+    .social-section { padding: 40px 0 80px; }
+    .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    
+    .social-card {
+      display: flex; align-items: center; gap: 20px; padding: 30px;
+      background: white; border-radius: 16px; border: 1px solid #e2e8f0;
+      transition: 0.3s; text-decoration: none;
+    }
+    .social-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    
+    .social-icon {
+      width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 32px; flex-shrink: 0; color: white;
+    }
+    .icon-insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+    .icon-yt { background: #FF0000; }
+    
+    .social-info h3 { margin: 0; font-size: 1.5rem; color: var(--dark); }
+    .social-info p { margin: 4px 0 0; color: var(--gray); font-size: 0.95rem; }
+    .social-arrow { margin-left: auto; color: var(--primary); opacity: 0; transition: 0.3s; }
+    .social-card:hover .social-arrow { opacity: 1; transform: translateX(5px); }
+
+    /* --- CARDS & GRID --- */
+    .section { padding: 80px 0; }
+    .bg-light { background: white; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+    .card {
+      background: white; border-radius: var(--radius); overflow: hidden;
+      border: 1px solid #e2e8f0; transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: var(--shadow); border-color: var(--primary-light); }
+    
+    .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .card h3 { font-size: 1.5rem; margin-bottom: 8px; color: var(--dark); }
+    .card p { color: var(--gray); font-size: 0.95rem; flex: 1; }
+
+    /* --- FOOTER --- */
+    footer { background: var(--dark); color: #94a3b8; padding: 60px 0 20px; font-size: 0.9rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { color: white; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
+    .footer-col a { display: block; margin-bottom: 10px; }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; }
+
+    /* --- RESPONSIVIDADE --- */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-content h1 { font-size: 3.5rem; }
+      .audience-bar { grid-template-columns: 1fr; padding: 20px; gap: 30px; }
+      .audience-divider { width: 100%; height: 1px; display: none; }
+      .social-grid { grid-template-columns: 1fr; }
+      
+      .desktop-menu { display: none; }
+      .menu-btn-mobile { display: block; }
+      
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed; top: 0; right: -100%; width: 85%; height: 100%;
+      background: white; z-index: 200; padding: 30px;
+      transition: 0.3s ease-in-out; box-shadow: -5px 0 20px rgba(0,0,0,0.1);
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .mobile-menu.active { right: 0; }
+    .mobile-menu-overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5); z-index: 199; display: none;
+    }
+    .mobile-menu-overlay.active { display: block; }
+    .close-menu { align-self: flex-end; font-size: 2rem; background: none; border: none; cursor: pointer; }
+    .mobile-link { font-size: 1.2rem; font-weight: 600; color: var(--dark); border-bottom: 1px solid #eee; padding: 10px 0; }
+
   </style>
 </head>
 <body>
-  <!-- Header -->
+
+  <div class="mobile-menu-overlay" id="menuOverlay"></div>
+  <nav class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" aria-label="Fechar menu">×</button>
+    <a href="#ondecomprar" class="mobile-link">Onde Comprar</a>
+    <a href="#catalogos" class="mobile-link">Catálogos</a>
+    <a href="#lojista" class="mobile-link" style="color: var(--primary)">Área do Lojista</a>
+    <a href="#midia" class="mobile-link">Redes Sociais</a>
+    <a href="https://chumbadas.com.br/" target="_blank" class="btn btn-primary" style="width: 100%; margin-top: auto;">
+      Loja B2B
+    </a>
+  </nav>
+
   <header class="site-header">
-    <div class="container nav">
-      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu"><span></span><span></span><span></span></button>
-      <a class="logo" href="#top"><img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Logo-chumbada-OFICIAL-horizonatal-2_f758e5db-514c-4559-8549-94cd56f40ef7.png?v=1756759937" alt="Chumbada Oficial"/></a>
-      <nav id="site-menu" class="spacer menu">
-        <a href="#ondecomprar">Onde comprar</a>
-        <a href="#lancamentos">Lançamentos</a>
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">
+        <img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Logo-chumbada-OFICIAL-horizonatal-2_f758e5db-514c-4559-8549-94cd56f40ef7.png?v=1756759937" alt="Chumbada Oficial">
+      </a>
+      
+      <nav class="desktop-menu">
+        <a href="#ondecomprar">Onde Comprar</a>
         <a href="#catalogos">Catálogos</a>
-        <a href="#lojista">Lojistas</a>
-        <a href="#midia">Mídia</a>
-        <a href="#contato">Contato</a>
+        <a href="#lojista">Revendedores</a>
+        <a href="https://chumbadas.com.br/" target="_blank" class="btn btn-primary">
+          <i class="ph ph-storefront"></i> Área do Lojista
+        </a>
       </nav>
-      <a class="btn btn-primary" href="https://chumbadas.com.br/" target="_blank">Comprar como lojista</a>
+
+      <button class="menu-btn-mobile" aria-label="Abrir menu">
+        <i class="ph ph-list"></i>
+      </button>
     </div>
   </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero section">
-      <div class="container hero-wrap">
-        <h1>Precisão. Potência. <span style="color:var(--cy)">Confiança.</span></h1>
-        <p class="sub">Performance para qualquer pescaria — chumbadas, jig heads, iscas e acessórios de confiança.</p>
-        <img class="hero-logo" src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/CHUMBADA-OFICIAL.png?v=1756760093" alt="Chumbada Oficial Logo"/>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://chumbadas.com.br/" target="_blank">Explorar produtos</a>
-          <a class="btn btn-ghost" href="#catalogos">Baixar catálogos</a>
-          <a class="btn btn-ghost" href="#ondecomprar">Onde comprar</a>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content" data-aos="fade-right">
+          <span class="badge">🏆 Qualidade de Fábrica</span>
+          <h1>Precisão.<br>Potência.<br><span style="color: var(--primary)">Confiança.</span></h1>
+          <p>A escolha número #1 de quem busca performance. Chumbadas, Jig Heads e Iscas Soft desenvolvidas para a pesca brasileira.</p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="https://chumbadas.com.br/" target="_blank" class="btn btn-primary">
+              Ver Produtos
+            </a>
+            <a href="#catalogos" class="btn btn-outline">
+              Baixar Catálogo
+            </a>
+          </div>
         </div>
-        <div>
-          <span class="chip">🏆 Qualidade de fábrica</span>
-          <span class="chip">⚡ Entrega nacional</span>
-          <span class="chip">🧪 Performance testada</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ONDE COMPRAR -->
-    <section id="ondecomprar" class="section">
-      <div class="container">
-        <h2>Onde comprar</h2>
-        <p class="kicker">Encontre lojas parceiras próximas de você</p>
-        <div class="stripe"></div>
-        <div class="grid cols-2">
-          <article class="card">
-            <div class="card-body">
-              <h3>Mapa de lojas parceiras</h3>
-              <p>Veja pontos de venda pelo Brasil.</p>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://www.google.com/maps/d/u/1/viewer?mid=11JpjrM0MR6OUAncu-V0REgjq8WnMC7E&ll=-17.60008680551716%2C-44.166546400000016&z=5" target="_blank">Abrir mapa</a>
-              </div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-body">
-              <h3>Compre online</h3>
-              <p>Escolha em marketplaces parceiros:</p>
-              <div class="actions">
-                <a class="btn btn-ghost" href="https://www.mercadolivre.com.br" target="_blank">Mercado Livre</a>
-                <a class="btn btn-ghost" href="https://shopee.com.br" target="_blank">Shopee</a>
-              </div>
-            </div>
-          </article>
+        <div class="hero-image" data-aos="fade-left">
+          <img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/CHUMBADA-OFICIAL.png?v=1756760093" alt="Produtos Chumbada Oficial">
         </div>
       </div>
     </section>
 
-    <!-- LANÇAMENTOS -->
-    <section id="lancamentos" class="section">
-      <div class="container">
-        <h2>Lançamentos e destaques</h2>
-        <div class="stripe"></div>
-        <div class="grid cols-3">
-          <article class="card">
-            <div class="card-media">
-              <img alt="AjiNeedle" src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/AjiNeedle.jpg?v=1756391541">
+    <div class="container">
+      <div class="audience-bar" data-aos="fade-up" data-aos-offset="-50">
+        <div class="audience-option">
+          <h3>Sou Pescador</h3>
+          <p>Quer usar nossos produtos na sua próxima pescaria?</p>
+          <a href="#ondecomprar" class="btn btn-outline" style="border-radius: 8px;">Encontrar Loja</a>
+        </div>
+        <div class="audience-divider"></div>
+        <div class="audience-option">
+          <h3>Sou Lojista</h3>
+          <p>Quer revender produtos oficiais com preço de fábrica?</p>
+          <a href="https://chumbadas.com.br/" target="_blank" class="btn btn-accent" style="border-radius: 8px;">Comprar Atacado</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="midia" class="social-section">
+      <div class="container" data-aos="fade-up">
+        <div class="grid-2 social-grid">
+          
+          <a href="https://www.instagram.com/chumbada_oficial/" target="_blank" class="social-card">
+            <div class="social-icon icon-insta">
+              <i class="ph ph-instagram-logo"></i>
             </div>
-            <div class="card-body">
-              <h3>AjiNeedle</h3>
-              <p>Feita para pesca ultra finesse Anji.</p>
+            <div class="social-info">
+              <h3>@chumbada_oficial</h3>
+              <p>Siga para bastidores e novidades.</p>
             </div>
-          </article>
-          <article class="card">
-            <div class="card-media">
-              <img alt="Lagartail" src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/lagartail_c2ab5c7a-038e-47f6-acd3-73fc8632f6fd.png?v=1756393022">
+            <i class="ph ph-arrow-right social-arrow" style="font-size: 24px;"></i>
+          </a>
+
+          <a href="https://www.youtube.com/@CHUMBADAOFICIAL" target="_blank" class="social-card">
+            <div class="social-icon icon-yt">
+              <i class="ph ph-youtube-logo"></i>
             </div>
-            <div class="card-body">
-              <h3>Lagartail</h3>
-              <p>Corpo compacto e cauda viva — ideal para toques curtos.</p>
+            <div class="social-info">
+              <h3>CHUMBADA OFICIAL</h3>
+              <p>Vídeos técnicos e lançamentos.</p>
             </div>
-          </article>
-          <article class="card">
-            <div class="card-media">
-              <img alt="Secretária de Pesca" src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/modos-de-uso-secretaria-01.png?v=1756758605">
-            </div>
-            <div class="card-body">
-              <h3>Secretária de Pesca</h3>
-              <p>Monte com jig heads, anzóis Quimipoint e acessórios originais.</p>
-            </div>
-          </article>
+            <i class="ph ph-arrow-right social-arrow" style="font-size: 24px;"></i>
+          </a>
+
         </div>
       </div>
     </section>
 
-    <!-- CATÁLOGOS -->
     <section id="catalogos" class="section">
       <div class="container">
-        <h2>Catálogos oficiais</h2>
-        <div class="stripe"></div>
-        <div class="grid cols-3">
-          <article class="card">
-            <div class="card-body">
-              <h3>Catálogo de Iscas</h3>
-              <p>Soft baits para água doce e salgada.</p>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://mega.nz/file/GN5TWTJS#9_eMV2oGO56COQKZob6eZ8I_Wa1A1_Er5Ufr77O3ib0" target="_blank">Baixar PDF</a>
-              </div>
+        <h2 class="section-title">Catálogos Digitais</h2>
+        <p class="section-subtitle">Baixe o material completo em PDF.</p>
+        
+        <div class="grid-3">
+          <a href="https://mega.nz/file/GN5TWTJS#9_eMV2oGO56COQKZob6eZ8I_Wa1A1_Er5Ufr77O3ib0" target="_blank" class="card" style="text-align: center;" data-aos="fade-up">
+            <div class="card-body" style="align-items: center; justify-content: center;">
+              <i class="ph ph-fish-simple" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
+              <h3>Iscas Soft</h3>
+              <span class="btn-outline btn" style="margin-top: 15px; font-size: 0.9rem;">Download PDF</span>
             </div>
-          </article>
-          <article class="card">
-            <div class="card-body">
-              <h3>Catálogo de Acessórios</h3>
-              <p>Ferramentas e utilidades.</p>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://mega.nz/file/SJREDC7Z#_UOlPemt8RgAq-U9EHnCiWiCme_mlTMMNISUgNCcQso" target="_blank">Baixar PDF</a>
-              </div>
+          </a>
+          
+          <a href="https://mega.nz/file/GFQCDCpA#ZrN-1DwuV8Tz0ntZtwCRO7s4gftg5VUzdjmt75Ry780" target="_blank" class="card" style="text-align: center;" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-body" style="align-items: center; justify-content: center;">
+              <i class="ph ph-anchor" style="font-size: 3rem; color: var(--accent); margin-bottom: 15px;"></i>
+              <h3>Chumbadas</h3>
+              <span class="btn-outline btn" style="margin-top: 15px; font-size: 0.9rem;">Download PDF</span>
             </div>
-          </article>
-          <article class="card">
-            <div class="card-body">
-              <h3>Catálogo de Chumbadas</h3>
-              <p>Modelos para cada técnica e condição.</p>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://mega.nz/file/GFQCDCpA#ZrN-1DwuV8Tz0ntZtwCRO7s4gftg5VUzdjmt75Ry780" target="_blank">Baixar PDF</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+          </a>
 
-    <!-- LOJISTAS -->
-    <section id="lojista" class="section">
-      <div class="container">
-        <h2>Seja um lojista Chumbada</h2>
-        <div class="stripe"></div>
-        <ul>
-          <li>Cadastro com CNPJ e aprovação rápida.</li>
-          <li>Mínimo de pedido: <b>R$ 500</b>.</li>
-          <li>Frete por transportadora a combinar.</li>
-          <li>Pagamento via <b>PIX/boleto</b> (3% off) ou cartão em até 6x.</li>
-          <li>Produção em até 15 dias úteis.</li>
-        </ul>
-
-        <!-- Botão para lojistas -->
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://chumbadas.com.br/" target="_blank">
-            Comprar como lojista
+          <a href="https://mega.nz/file/SJREDC7Z#_UOlPemt8RgAq-U9EHnCiWiCme_mlTMMNISUgNCcQso" target="_blank" class="card" style="text-align: center;" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-body" style="align-items: center; justify-content: center;">
+              <i class="ph ph-toolbox" style="font-size: 3rem; color: var(--dark); margin-bottom: 15px;"></i>
+              <h3>Acessórios</h3>
+              <span class="btn-outline btn" style="margin-top: 15px; font-size: 0.9rem;">Download PDF</span>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- MÍDIA -->
-    <section id="midia" class="section">
+    <section id="lojista" class="section bg-light">
       <div class="container">
-        <h2>Mídia e redes sociais</h2>
-        <div class="stripe"></div>
-        <div class="grid cols-3">
-          <article class="card">
-            <div class="card-body">
-              <h3>Instagram</h3>
-              <p>@chumbada_oficial</p>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://www.instagram.com/chumbada_oficial/" target="_blank">Abrir</a>
-              </div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-body">
-              <h3>YouTube</h3>
-              <p>Produtos e tutoriais</p>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://www.youtube.com/channel/UC68NbAlBkPjMsZ7FoqjhEvQ" target="_blank">Abrir</a>
-              </div>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card-body">
-              <h3>Facebook</h3>
-              <p>Novidades e comunidade</p>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://www.facebook.com/chumbadaoficial/" target="_blank">Abrir</a>
-              </div>
-            </div>
-          </article>
+        <div class="grid-2" style="align-items: center;">
+          <div data-aos="fade-right">
+            <span class="badge" style="background: #e0f2fe; color: #0284c7;">B2B Exclusivo</span>
+            <h2 class="section-title" style="text-align: left; margin-top: 10px;">Abasteça sua Loja</h2>
+            <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 20px;">
+              Oferecemos condições especiais e produtos de alto giro. Pedido mínimo de R$ 500,00.
+            </p>
+            <a href="https://chumbadas.com.br/" target="_blank" class="btn btn-primary">
+              Fazer Cadastro / Login
+            </a>
+          </div>
+          <div data-aos="fade-left">
+             <img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/0000.jpg?v=1756762787" alt="Kit Lojista" style="border-radius: 20px; box-shadow: var(--shadow); width: 100%;">
+          </div>
         </div>
-
-        <!-- Artes Oficiais separado -->
-        <div class="grid cols-3" style="margin-top:24px">
-          <article class="card">
-            <div class="card-media">
-              <img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/0000.jpg?v=1756762787" alt="Artes Chumbada Oficial">
-            </div>
-            <div class="card-body">
-              <h3>Artes Oficiais</h3>
-              <p>Quer usar nossas artes? Baixe aqui o material oficial de divulgação.</p>
-              <div class="actions">
-                <a class="btn btn-primary" href="https://mega.nz/folder/2E4yXYjS#kH-LH1_WCGvcJ5Q3eyrYIw" target="_blank">Baixar Artes</a>
-              </div>
-            </div>
-          </article>
-        </div>
-
       </div>
     </section>
 
-    <!-- CONTATO -->
-    <section id="contato" class="section">
+    <section id="ondecomprar" class="section">
       <div class="container">
-        <h2>Contato</h2>
-        <p class="kicker">Atendimento: seg a sex, 07h às 17h</p>
-        <div class="stripe"></div>
-        <p>
-          Email: <a href="mailto:comercial@chumbada.com.br">comercial@chumbada.com.br</a><br>
-          WhatsApp: <a href="https://wa.me/5511941900602" target="_blank">(11) 94190-0602 ou 11 91039-8448</a>
-        </p>
-        <p>Endereço: Rua Silvana, 93 — Santana de Parnaíba, SP</p>
+        <h2 class="section-title">Onde Comprar</h2>
+        <div class="grid-2">
+          <div class="card" style="border: 2px solid var(--primary); background: #f0f9ff;" data-aos="fade-up">
+            <div class="card-body" style="text-align: center;">
+              <i class="ph ph-map-pin" style="font-size: 3rem; color: var(--primary); margin-bottom: 10px;"></i>
+              <h3>Lojas Físicas</h3>
+              <p>Veja o mapa de revendedores parceiros.</p>
+              <div style="margin-top: 15px;">
+                <a href="https://www.google.com/maps/d/u/1/viewer?mid=11JpjrM0MR6OUAncu-V0REgjq8WnMC7E&ll=-17.60008680551716%2C-44.166546400000016&z=5" target="_blank" class="btn btn-primary">Abrir Mapa</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-body" style="text-align: center;">
+              <i class="ph ph-shopping-cart" style="font-size: 3rem; color: var(--accent); margin-bottom: 10px;"></i>
+              <h3>Compre Online</h3>
+              <p>Marketplaces parceiros.</p>
+              <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px;">
+                <a href="https://lista.mercadolivre.com.br/chumbada-oficial" target="_blank" class="btn btn-outline">Mercado Livre</a>
+                <a href="https://shopee.com.br/search?keyword=chumbada%20oficial" target="_blank" class="btn btn-outline">Shopee</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Logo-chumbada-OFICIAL-horizonatal-2_f758e5db-514c-4559-8549-94cd56f40ef7.png?v=1756759937" alt="Chumbada Oficial" style="opacity: 0.8; height: 30px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+            <p>Performance para qualquer pescaria. Produtos desenvolvidos para garantir a melhor experiência na água.</p>
+          </div>
+          
+          <div class="footer-col">
+            <h4>Navegação</h4>
+            <a href="#ondecomprar">Onde Comprar</a>
+            <a href="#catalogos">Catálogos</a>
+            <a href="#midia">Redes Sociais</a>
+          </div>
+
+          <div class="footer-col">
+            <h4>Contato</h4>
+            <p><i class="ph ph-envelope"></i> comercial@chumbada.com.br</p>
+            <p><i class="ph ph-whatsapp-logo"></i> (11) 94190-0602</p>
+            <p><i class="ph ph-map-pin"></i> Santana de Parnaíba, SP</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div>© <span id="year"></span> Chumbada Oficial.</div>
+          <div>
+            <a href="https://mega.nz/folder/2E4yXYjS#kH-LH1_WCGvcJ5Q3eyrYIw" target="_blank" style="color: var(--accent);">
+              <i class="ph ph-image"></i> Baixar Artes Oficiais
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </main>
 
-  <footer>
-    <div class="container" style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;justify-content:space-between">
-      <div>© <span id="year"></span> Chumbada Oficial — Todos os direitos reservados</div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <a href="https://chumbadas.com.br/pages/contato" target="_blank" rel="noopener">Contato</a>
-        <a href="#catalogos">Catálogos</a>
-        <a href="#ondecomprar">Onde comprar</a>
-      </div>
-    </div>
-  </footer>
-
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Toggle do menu mobile
-    const toggle = document.querySelector('.menu-toggle');
-    const menu = document.getElementById('site-menu');
-    if (toggle && menu) {
-      toggle.addEventListener('click', () => {
-        menu.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', menu.classList.contains('open'));
-      });
+    AOS.init({ duration: 800, once: true, offset: 100 });
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu Mobile Logic
+    const btnMobile = document.querySelector('.menu-btn-mobile');
+    const closeMenu = document.querySelector('.close-menu');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('menuOverlay');
+    const links = document.querySelectorAll('.mobile-link');
+
+    function toggleMenu() {
+      mobileMenu.classList.toggle('active');
+      overlay.classList.toggle('active');
     }
-    // Ano no rodapé
-    const y = document.getElementById('year');
-    if (y) y.textContent = new Date().getFullYear();
+
+    btnMobile.addEventListener('click', toggleMenu);
+    closeMenu.addEventListener('click', toggleMenu);
+    overlay.addEventListener('click', toggleMenu);
+    links.forEach(link => link.addEventListener('click', toggleMenu));
   </script>
 </body>
 </html>
