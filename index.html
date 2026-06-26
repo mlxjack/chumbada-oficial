@@ -181,6 +181,101 @@
     .footer-col a { display: block; margin-bottom: 10px; }
     .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; }
 
+    /* --- HUB DE CATÁLOGOS --- */
+    .hub-card {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid #e2e8f0;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+    .hub-card:hover {
+      border-color: var(--primary-light);
+      transform: translateY(-4px);
+    }
+    .hub-card-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .hub-card-content h3 {
+      font-size: 2rem;
+      color: var(--dark);
+      margin: 0;
+    }
+    .hub-card-content p {
+      color: var(--gray);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+    .hub-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 8px 0;
+    }
+    .hub-category-tag {
+      background: #f1f5f9;
+      color: var(--dark);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #e2e8f0;
+    }
+    .hub-card-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .hub-image-wrapper {
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 1;
+      background: radial-gradient(circle at center, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .hub-image-wrapper i {
+      font-size: 6rem;
+      color: var(--primary);
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @media (max-width: 768px) {
+      .hub-card {
+        grid-template-columns: 1fr;
+        padding: 24px;
+        gap: 24px;
+        text-align: center;
+      }
+      .hub-card-content {
+        align-items: center;
+      }
+      .hub-categories {
+        justify-content: center;
+      }
+      .hub-image-wrapper {
+        max-width: 200px;
+      }
+    }
+
     /* --- RESPONSIVIDADE --- */
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; text-align: center; }
@@ -262,7 +357,7 @@
               Ver Produtos
             </a>
             <a href="#catalogos" class="btn btn-outline">
-              Baixar Catálogo
+              Ver Catálogos
             </a>
           </div>
         </div>
@@ -320,33 +415,32 @@
 
     <section id="catalogos" class="section">
       <div class="container">
-        <h2 class="section-title">Catálogos Digitais</h2>
-        <p class="section-subtitle">Baixe o material completo em PDF.</p>
+        <h2 class="section-title">Catálogos de Produtos</h2>
+        <p class="section-subtitle">Acesse nossa linha de produtos na vitrine interativa sem preços.</p>
         
-        <div class="grid-3">
-          <a href="https://mega.nz/file/GN5TWTJS#9_eMV2oGO56COQKZob6eZ8I_Wa1A1_Er5Ufr77O3ib0" target="_blank" class="card" style="text-align: center;" data-aos="fade-up">
-            <div class="card-body" style="align-items: center; justify-content: center;">
-              <i class="ph ph-fish-simple" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
-              <h3>Iscas Soft</h3>
-              <span class="btn-outline btn" style="margin-top: 15px; font-size: 0.9rem;">Download PDF</span>
+        <div class="hub-card" data-aos="fade-up">
+          <div class="hub-card-content">
+            <span class="badge">Acesso Online</span>
+            <h3>Nossa Vitrine de Catálogos</h3>
+            <p>
+              Substituímos os downloads de PDF por uma plataforma digital interativa. Agora você pode navegar facilmente por toda a nossa linha, conferindo detalhes de modelos, cores e especificações técnicas:
+            </p>
+            <div class="hub-categories">
+              <span class="hub-category-tag"><i class="ph ph-shield"></i> Anzóis</span>
+              <span class="hub-category-tag"><i class="ph ph-fish-simple"></i> Iscas Soft</span>
+              <span class="hub-category-tag"><i class="ph ph-toolbox"></i> Acessórios</span>
+              <span class="hub-category-tag"><i class="ph ph-glasses"></i> Óculos Polarizados</span>
+              <span class="hub-category-tag"><i class="ph ph-anchor"></i> Chumbadas & Jig Heads</span>
             </div>
-          </a>
-          
-          <a href="https://mega.nz/file/GFQCDCpA#ZrN-1DwuV8Tz0ntZtwCRO7s4gftg5VUzdjmt75Ry780" target="_blank" class="card" style="text-align: center;" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-body" style="align-items: center; justify-content: center;">
-              <i class="ph ph-anchor" style="font-size: 3rem; color: var(--accent); margin-bottom: 15px;"></i>
-              <h3>Chumbadas</h3>
-              <span class="btn-outline btn" style="margin-top: 15px; font-size: 0.9rem;">Download PDF</span>
+            <a href="https://mlxjack.github.io/hub-catalogos-sem-preco/" target="_blank" class="btn btn-primary" style="margin-top: 10px;">
+              Acessar Hub de Catálogos <i class="ph ph-arrow-square-out"></i>
+            </a>
+          </div>
+          <div class="hub-card-image">
+            <div class="hub-image-wrapper">
+              <i class="ph ph-folders"></i>
             </div>
-          </a>
-
-          <a href="https://mega.nz/file/SJREDC7Z#_UOlPemt8RgAq-U9EHnCiWiCme_mlTMMNISUgNCcQso" target="_blank" class="card" style="text-align: center;" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-body" style="align-items: center; justify-content: center;">
-              <i class="ph ph-toolbox" style="font-size: 3rem; color: var(--dark); margin-bottom: 15px;"></i>
-              <h3>Acessórios</h3>
-              <span class="btn-outline btn" style="margin-top: 15px; font-size: 0.9rem;">Download PDF</span>
-            </div>
-          </a>
+          </div>
         </div>
       </div>
     </section>
