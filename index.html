@@ -3,543 +3,317 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chumbada Oficial | Performance e Precisão na Pesca Esportiva</title>
-  <meta name="description" content="Fabricante líder em chumbadas, jig heads e iscas soft. Produtos de alta performance para pesca esportiva. Venda exclusiva para lojistas e distribuidores." />
-  
+  <title>Chumbada Oficial | Anzóis, iscas, chumbadas e acessórios de pesca</title>
+  <meta name="description" content="Chumbada Oficial: anzóis, jig heads, iscas soft, chumbadas, acessórios e óculos polarizados. Venda no atacado para lojistas e no varejo pelo Mercado Livre e Shopee." />
+  <meta name="theme-color" content="#0f2a52" />
+  <link rel="icon" href="assets/favicon.png" />
+  <meta property="og:title" content="Chumbada Oficial" />
+  <meta property="og:description" content="Equipamento de pesca feito pra beira d'água. Seis linhas de produto, atacado para lojistas." />
+  <meta property="og:image" content="https://chumbada.com.br/assets/selo.webp" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-  
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <style>
-    /* --- VARIÁVEIS E RESET --- */
-    :root {
-      --primary: #006FB9; /* Azul Profundo */
-      --primary-light: #38BDF8; /* Azul Claro */
-      --accent: #F97316; /* Laranja */
-      --dark: #0F172A; /* Texto Escuro */
-      --gray: #64748B;
-      --bg-body: #F8FAFC;
-      --radius: 12px;
-      --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
-      --container: 1240px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-body);
-      color: var(--dark);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    h1, h2, h3 { font-family: 'Bebas Neue', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; transition: 0.3s; }
-
-    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
-    
-    /* --- BOTÕES --- */
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding: 12px 28px; border-radius: 50px; font-weight: 700; font-size: 1rem;
-      cursor: pointer; transition: all 0.3s ease; border: none;
-    }
-    
-    /* CORREÇÃO DO BOTÃO PRINCIPAL (Texto Branco) */
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), #0284c7);
-      color: #ffffff !important;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
-    }
-    .btn-primary i {
-      color: #ffffff !important;
-      font-size: 1.2rem;
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(2, 132, 199, 0.4); opacity: 0.95; }
-    
-    .btn-accent {
-      background: var(--accent); color: white;
-      box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);
-    }
-    .btn-accent:hover { background: #ea580c; transform: translateY(-2px); }
-
-    .btn-outline {
-      border: 2px solid var(--primary); color: var(--primary); background: transparent;
-    }
-    .btn-outline:hover { background: var(--primary); color: white; }
-
-    /* --- TYPOGRAPHY --- */
-    .section-title {
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      text-align: center; margin-bottom: 10px; color: var(--dark);
-      line-height: 1;
-    }
-    .section-subtitle {
-      text-align: center; color: var(--gray); margin-bottom: 40px; font-size: 1.1rem;
-    }
-    .badge {
-      background: rgba(56, 189, 248, 0.1); color: var(--primary);
-      padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.5px;
-    }
-
-    /* --- HEADER --- */
-    .site-header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.05); padding: 16px 0;
-    }
-    .nav-wrapper { display: flex; justify-content: space-between; align-items: center; }
-    .logo img { height: 42px; }
-    
-    .desktop-menu { display: flex; gap: 32px; align-items: center; }
-    .desktop-menu a:not(.btn) { font-weight: 600; font-size: 0.95rem; color: var(--gray); position: relative; }
-    .desktop-menu a:not(.btn):hover { color: var(--primary); }
-
-    .menu-btn-mobile { display: none; font-size: 2rem; color: var(--dark); background: none; border: none; cursor: pointer; }
-
-    /* --- HERO --- */
-    .hero {
-      position: relative; padding: 100px 0 60px; overflow: hidden;
-      background: radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.1) 0%, transparent 40%);
-    }
-    .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .hero-content h1 {
-      font-size: clamp(3.5rem, 6vw, 6rem); line-height: 0.9; margin-bottom: 24px;
-      background: linear-gradient(180deg, var(--dark), var(--primary));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .hero-content p { font-size: 1.25rem; color: var(--gray); margin-bottom: 32px; max-width: 500px; }
-    
-    .hero-image img { 
-      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15)); 
-      transform: perspective(1000px) rotateY(-10deg); 
-      transition: 0.5s; 
-    }
-    .hero-image:hover img { transform: perspective(1000px) rotateY(0deg) scale(1.02); }
-
-    /* --- AUDIENCE SELECTOR --- */
-    .audience-bar {
-      margin-top: -40px; position: relative; z-index: 10;
-      background: white; border-radius: 20px; box-shadow: var(--shadow);
-      padding: 30px; display: grid; grid-template-columns: 1fr 1px 1fr; gap: 20px;
-    }
-    .audience-divider { background: #eee; height: 100%; width: 1px; }
-    .audience-option { text-align: center; }
-    .audience-option h3 { color: var(--primary); font-size: 1.8rem; margin-bottom: 8px; }
-
-    /* --- SOCIAL SECTION --- */
-    .social-section { padding: 40px 0 80px; }
-    .social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    
-    .social-card {
-      display: flex; align-items: center; gap: 20px; padding: 30px;
-      background: white; border-radius: 16px; border: 1px solid #e2e8f0;
-      transition: 0.3s; text-decoration: none;
-    }
-    .social-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
-    
-    .social-icon {
-      width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      font-size: 32px; flex-shrink: 0; color: white;
-    }
-    .icon-insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-    .icon-yt { background: #FF0000; }
-    
-    .social-info h3 { margin: 0; font-size: 1.5rem; color: var(--dark); }
-    .social-info p { margin: 4px 0 0; color: var(--gray); font-size: 0.95rem; }
-    .social-arrow { margin-left: auto; color: var(--primary); opacity: 0; transition: 0.3s; }
-    .social-card:hover .social-arrow { opacity: 1; transform: translateX(5px); }
-
-    /* --- CARDS & GRID --- */
-    .section { padding: 80px 0; }
-    .bg-light { background: white; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-
-    .card {
-      background: white; border-radius: var(--radius); overflow: hidden;
-      border: 1px solid #e2e8f0; transition: all 0.3s ease; height: 100%; display: flex; flex-direction: column;
-    }
-    .card:hover { transform: translateY(-8px); box-shadow: var(--shadow); border-color: var(--primary-light); }
-    
-    .card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-    .card h3 { font-size: 1.5rem; margin-bottom: 8px; color: var(--dark); }
-    .card p { color: var(--gray); font-size: 0.95rem; flex: 1; }
-
-    /* --- FOOTER --- */
-    footer { background: var(--dark); color: #94a3b8; padding: 60px 0 20px; font-size: 0.9rem; }
-    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-    .footer-col h4 { color: white; font-weight: 700; margin-bottom: 20px; text-transform: uppercase; }
-    .footer-col a { display: block; margin-bottom: 10px; }
-    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; }
-
-    /* --- HUB DE CATÁLOGOS --- */
-    .hub-card {
-      background: white;
-      border-radius: var(--radius);
-      border: 1px solid #e2e8f0;
-      padding: 40px;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
-      align-items: center;
-      box-shadow: var(--shadow);
-      transition: all 0.3s ease;
-    }
-    .hub-card:hover {
-      border-color: var(--primary-light);
-      transform: translateY(-4px);
-    }
-    .hub-card-content {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 16px;
-    }
-    .hub-card-content h3 {
-      font-size: 2rem;
-      color: var(--dark);
-      margin: 0;
-    }
-    .hub-card-content p {
-      color: var(--gray);
-      font-size: 1.05rem;
-      line-height: 1.6;
-    }
-    .hub-categories {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: 8px 0;
-    }
-    .hub-category-tag {
-      background: #f1f5f9;
-      color: var(--dark);
-      padding: 6px 14px;
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid #e2e8f0;
-    }
-    .hub-card-image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-    .hub-image-wrapper {
-      width: 100%;
-      max-width: 300px;
-      aspect-ratio: 1;
-      background: radial-gradient(circle at center, rgba(56, 189, 248, 0.1) 0%, transparent 70%);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-    .hub-image-wrapper i {
-      font-size: 6rem;
-      color: var(--primary);
-      animation: float 4s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    @media (max-width: 768px) {
-      .hub-card {
-        grid-template-columns: 1fr;
-        padding: 24px;
-        gap: 24px;
-        text-align: center;
-      }
-      .hub-card-content {
-        align-items: center;
-      }
-      .hub-categories {
-        justify-content: center;
-      }
-      .hub-image-wrapper {
-        max-width: 200px;
-      }
-    }
-
-    /* --- RESPONSIVIDADE --- */
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; text-align: center; }
-      .hero-content h1 { font-size: 3.5rem; }
-      .audience-bar { grid-template-columns: 1fr; padding: 20px; gap: 30px; }
-      .audience-divider { width: 100%; height: 1px; display: none; }
-      .social-grid { grid-template-columns: 1fr; }
-      
-      .desktop-menu { display: none; }
-      .menu-btn-mobile { display: block; }
-      
-      .grid-3, .grid-2 { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; text-align: center; }
-      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
-    }
-
-    /* Mobile Menu */
-    .mobile-menu {
-      position: fixed; top: 0; right: -100%; width: 85%; height: 100%;
-      background: white; z-index: 200; padding: 30px;
-      transition: 0.3s ease-in-out; box-shadow: -5px 0 20px rgba(0,0,0,0.1);
-      display: flex; flex-direction: column; gap: 20px;
-    }
-    .mobile-menu.active { right: 0; }
-    .mobile-menu-overlay {
-      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5); z-index: 199; display: none;
-    }
-    .mobile-menu-overlay.active { display: block; }
-    .close-menu { align-self: flex-end; font-size: 2rem; background: none; border: none; cursor: pointer; }
-    .mobile-link { font-size: 1.2rem; font-weight: 600; color: var(--dark); border-bottom: 1px solid #eee; padding: 10px 0; }
-
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/fotos/praia-pesca.webp">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+  <a class="skip" href="#linhas">Pular para os produtos</a>
 
-  <div class="mobile-menu-overlay" id="menuOverlay"></div>
-  <nav class="mobile-menu" id="mobileMenu">
-    <button class="close-menu" aria-label="Fechar menu">×</button>
-    <a href="#ondecomprar" class="mobile-link">Onde Comprar</a>
-    <a href="#catalogos" class="mobile-link">Catálogos</a>
-    <a href="#lojista" class="mobile-link" style="color: var(--primary)">Área do Lojista</a>
-    <a href="#midia" class="mobile-link">Redes Sociais</a>
-    <a href="https://chumbadas.com.br/" target="_blank" class="btn btn-primary" style="width: 100%; margin-top: auto;">
-      Loja B2B
-    </a>
-  </nav>
+  <!-- Abertura -->
+  <div class="intro" aria-hidden="true">
+    <img src="assets/selo.webp" alt="">
+  </div>
 
-  <header class="site-header">
-    <div class="container nav-wrapper">
-      <a href="#" class="logo">
-        <img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Logo-chumbada-OFICIAL-horizonatal-2_f758e5db-514c-4559-8549-94cd56f40ef7.png?v=1756759937" alt="Chumbada Oficial">
+  <div class="progress" aria-hidden="true"><span></span></div>
+
+  <header class="nav" id="topo">
+    <div class="wrap nav-in">
+      <a href="#" class="nav-logo" aria-label="Chumbada Oficial, início">
+        <img src="assets/logo.webp" alt="Chumbada Oficial" width="150" height="61">
       </a>
-      
-      <nav class="desktop-menu">
-        <a href="#ondecomprar">Onde Comprar</a>
-        <a href="#catalogos">Catálogos</a>
-        <a href="#lojista">Revendedores</a>
-        <a href="https://chumbadas.com.br/" target="_blank" class="btn btn-primary">
-          <i class="ph ph-storefront"></i> Área do Lojista
-        </a>
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#linhas">Produtos</a>
+        <a href="#lojista">Para lojistas</a>
+        <a href="#comprar">Onde comprar</a>
+        <a href="#contato">Contato</a>
       </nav>
-
-      <button class="menu-btn-mobile" aria-label="Abrir menu">
-        <i class="ph ph-list"></i>
+      <a class="btn btn-orange nav-cta" href="https://chumbadas.com.br/" target="_blank" rel="noopener">
+        Área do Lojista <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+      <button class="nav-burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span>
       </button>
     </div>
   </header>
 
+  <div class="menu" id="menu" hidden>
+    <nav aria-label="Menu">
+      <a href="#linhas"><small>01</small>Produtos</a>
+      <a href="#lojista"><small>02</small>Para lojistas</a>
+      <a href="#comprar"><small>03</small>Onde comprar</a>
+      <a href="#contato"><small>04</small>Contato</a>
+    </nav>
+    <a class="btn btn-orange" href="https://chumbadas.com.br/" target="_blank" rel="noopener">Área do Lojista</a>
+  </div>
+
   <main>
+    <!-- HERO -->
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content" data-aos="fade-right">
-          <span class="badge">🏆 Qualidade de Fábrica</span>
-          <h1>Precisão.<br>Potência.<br><span style="color: var(--primary)">Confiança.</span></h1>
-          <p>A escolha número #1 de quem busca performance. Chumbadas, Jig Heads e Iscas Soft desenvolvidas para a pesca brasileira.</p>
-          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-            <a href="https://chumbadas.com.br/" target="_blank" class="btn btn-primary">
-              Ver Produtos
-            </a>
-            <a href="#catalogos" class="btn btn-outline">
-              Ver Catálogos
-            </a>
-          </div>
+      <div class="hero-bg" data-parallax="0.25">
+        <img src="assets/fotos/praia-pesca.webp" alt="">
+      </div>
+      <div class="hero-shade"></div>
+      <div class="bubbles" aria-hidden="true">
+        <i style="--x:6%;--s:10px;--t:11s;--d:0s"></i><i style="--x:18%;--s:18px;--t:14s;--d:2s"></i>
+        <i style="--x:33%;--s:8px;--t:9s;--d:4s"></i><i style="--x:58%;--s:14px;--t:12s;--d:1s"></i>
+        <i style="--x:72%;--s:22px;--t:16s;--d:5s"></i><i style="--x:88%;--s:9px;--t:10s;--d:3s"></i>
+      </div>
+
+      <div class="wrap hero-in">
+        <div class="hero-copy">
+          <p class="eyebrow hero-fade" style="--d:.1s"><span class="dot"></span> Fabricante de equipamento de pesca</p>
+          <h1 class="hero-title">
+            <span class="line"><span>Precisão.</span></span>
+            <span class="line"><span>Potência.</span></span>
+            <span class="line"><span class="hl">Confiança.</span></span>
+          </h1>
+          <p class="hero-lead hero-fade" style="--d:.75s">Anzóis, iscas soft, chumbadas, jig heads, acessórios e óculos polarizados desenvolvidos para a pesca brasileira.</p>
         </div>
-        <div class="hero-image" data-aos="fade-left">
-          <img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/CHUMBADA-OFICIAL.png?v=1756760093" alt="Produtos Chumbada Oficial">
+
+        <div class="paths hero-fade" style="--d:.95s">
+          <a class="path" href="#comprar">
+            <span class="path-tag">Sou pescador</span>
+            <strong>Quero comprar pra minha pescaria</strong>
+            <span class="path-go">Ver onde comprar <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="path path-hot" href="#lojista">
+            <span class="path-tag">Sou lojista</span>
+            <strong>Quero revender na minha loja</strong>
+            <span class="path-go">Comprar no atacado <svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
         </div>
       </div>
+
+      <a class="scroll-cue" href="#linhas" aria-label="Rolar para os produtos"><span></span></a>
+
+      <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path class="w1" d="M0 60 C 240 20 480 100 720 60 S 1200 20 1440 60 V120 H0Z"/>
+        <path class="w2" d="M0 80 C 240 40 480 120 720 80 S 1200 40 1440 80 V120 H0Z"/>
+      </svg>
     </section>
 
-    <div class="container">
-      <div class="audience-bar" data-aos="fade-up" data-aos-offset="-50">
-        <div class="audience-option">
-          <h3>Sou Pescador</h3>
-          <p>Quer usar nossos produtos na sua próxima pescaria?</p>
-          <a href="#ondecomprar" class="btn btn-outline" style="border-radius: 8px;">Comprar Online</a>
-        </div>
-        <div class="audience-divider"></div>
-        <div class="audience-option">
-          <h3>Sou Lojista</h3>
-          <p>Quer revender produtos oficiais com preço de fábrica?</p>
-          <a href="https://chumbadas.com.br/" target="_blank" class="btn btn-accent" style="border-radius: 8px;">Comprar Atacado</a>
-        </div>
+    <!-- FAIXA -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Anzóis</span><b>⚓</b><span>Iscas soft</span><b>⚓</b><span>Chumbadas</span><b>⚓</b><span>Jig heads</span><b>⚓</b><span>Acessórios</span><b>⚓</b><span>Óculos polarizados</span><b>⚓</b><span>Pesqueiro</span><b>⚓</b>
+        <span>Anzóis</span><b>⚓</b><span>Iscas soft</span><b>⚓</b><span>Chumbadas</span><b>⚓</b><span>Jig heads</span><b>⚓</b><span>Acessórios</span><b>⚓</b><span>Óculos polarizados</span><b>⚓</b><span>Pesqueiro</span><b>⚓</b>
       </div>
     </div>
 
-    <section id="midia" class="social-section">
-      <div class="container" data-aos="fade-up">
-        <div class="grid-2 social-grid">
-          
-          <a href="https://www.instagram.com/chumbada_oficial/" target="_blank" class="social-card">
-            <div class="social-icon icon-insta">
-              <i class="ph ph-instagram-logo"></i>
-            </div>
-            <div class="social-info">
-              <h3>@chumbada_oficial</h3>
-              <p>Siga para bastidores e novidades.</p>
-            </div>
-            <i class="ph ph-arrow-right social-arrow" style="font-size: 24px;"></i>
+    <!-- LINHAS -->
+    <section class="sec linhas" id="linhas">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="eyebrow rv"><span class="dot"></span> Catálogos online</p>
+          <h2 class="rv" style="--d:.08s">Escolha uma linha<br>de produtos.</h2>
+          <p class="sec-lead rv" style="--d:.16s">Cada linha tem seu catálogo com fotos, cores, tamanhos e especificações. Toque em uma pra abrir.</p>
+        </div>
+
+        <div class="grid-linhas">
+          <a class="linha rv" style="--d:0s" href="https://anzois.chumbada.com.br/" target="_blank" rel="noopener">
+            <div class="linha-img"><img src="assets/linhas/anzois.webp" alt="Anzóis em embalagens Chumbada Oficial" loading="lazy"></div>
+            <div class="linha-txt"><span class="count" data-count="45">45</span><h3>Anzóis &amp; Jig Heads</h3><p>Várias medidas, linha premium Quimipoint e jig heads.</p></div>
+            <span class="linha-go"><svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
           </a>
-
-          <a href="https://www.youtube.com/@CHUMBADAOFICIAL" target="_blank" class="social-card">
-            <div class="social-icon icon-yt">
-              <i class="ph ph-youtube-logo"></i>
-            </div>
-            <div class="social-info">
-              <h3>CHUMBADA OFICIAL</h3>
-              <p>Vídeos técnicos e lançamentos.</p>
-            </div>
-            <i class="ph ph-arrow-right social-arrow" style="font-size: 24px;"></i>
+          <a class="linha rv" style="--d:.06s" href="https://iscas.chumbada.com.br/" target="_blank" rel="noopener">
+            <div class="linha-img"><img src="assets/linhas/iscas.webp" alt="Iscas soft coloridas" loading="lazy"></div>
+            <div class="linha-txt"><span class="count" data-count="68">68</span><h3>Iscas Soft</h3><p>Camarões, shads e soft baits em várias cores.</p></div>
+            <span class="linha-go"><svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
           </a>
-
+          <a class="linha rv" style="--d:.12s" href="https://chumbadas.chumbada.com.br/" target="_blank" rel="noopener">
+            <div class="linha-img"><img src="assets/linhas/chumbadas.webp" alt="Chumbadas de vários formatos" loading="lazy"></div>
+            <div class="linha-txt"><span class="count" data-count="124">124</span><h3>Chumbadas &amp; Jig Heads</h3><p>Diversos formatos, pesos e cores.</p></div>
+            <span class="linha-go"><svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a class="linha rv" style="--d:0s" href="https://acessorios.chumbada.com.br/" target="_blank" rel="noopener">
+            <div class="linha-img"><img src="assets/linhas/acessorios.webp" alt="Acessórios de pesca" loading="lazy"></div>
+            <div class="linha-txt"><span class="count" data-count="80">80</span><h3>Acessórios</h3><p>Linhas, alicates, snaps, estojos e muito mais.</p></div>
+            <span class="linha-go"><svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a class="linha rv" style="--d:.06s" href="https://oculos.chumbada.com.br/" target="_blank" rel="noopener">
+            <div class="linha-img"><img src="assets/linhas/oculos.webp" alt="Óculos polarizados" loading="lazy"></div>
+            <div class="linha-txt"><span class="count" data-count="39">39</span><h3>Óculos Polarizados</h3><p>Modelos e lentes pra enxergar dentro d'água.</p></div>
+            <span class="linha-go"><svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a class="linha rv" style="--d:.12s" href="https://pesqueiro.chumbada.com.br/" target="_blank" rel="noopener">
+            <div class="linha-img"><img src="assets/linhas/pesqueiro.webp" alt="Produtos para pesqueiro" loading="lazy"></div>
+            <div class="linha-txt"><span class="count" data-count="27">27</span><h3>Pesqueiro</h3><p>Itens selecionados pra pesca em pesqueiro.</p></div>
+            <span class="linha-go"><svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
         </div>
+
+        <a class="hub-cta rv" href="https://catalogos.chumbada.com.br/" target="_blank" rel="noopener">
+          <span class="hub-ic"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+          <span><strong>Procurando um produto específico?</strong> Busque entre todos os catálogos de uma vez.</span>
+          <span class="btn btn-navy">Abrir busca</span>
+        </a>
       </div>
     </section>
 
-    <section id="catalogos" class="section">
-      <div class="container">
-        <h2 class="section-title">Catálogos de Produtos</h2>
-        <p class="section-subtitle">Acesse nossa linha de produtos na vitrine interativa sem preços.</p>
-        
-        <div class="hub-card" data-aos="fade-up">
-          <div class="hub-card-content">
-            <span class="badge">Acesso Online</span>
-            <h3>Nossa Vitrine de Catálogos</h3>
-            <p>
-              Substituímos os downloads de PDF por uma plataforma digital interativa. Agora você pode navegar facilmente por toda a nossa linha, conferindo detalhes de modelos, cores e especificações técnicas:
-            </p>
-            <div class="hub-categories">
-              <span class="hub-category-tag"><i class="ph ph-shield"></i> Anzóis</span>
-              <span class="hub-category-tag"><i class="ph ph-fish-simple"></i> Iscas Soft</span>
-              <span class="hub-category-tag"><i class="ph ph-toolbox"></i> Acessórios</span>
-              <span class="hub-category-tag"><i class="ph ph-glasses"></i> Óculos Polarizados</span>
-              <span class="hub-category-tag"><i class="ph ph-anchor"></i> Chumbadas & Jig Heads</span>
-            </div>
-            <a href="https://mlxjack.github.io/hub-catalogos-sem-preco/" target="_blank" class="btn btn-primary" style="margin-top: 10px;">
-              Acessar Hub de Catálogos <i class="ph ph-arrow-square-out"></i>
+    <!-- EM AÇÃO -->
+    <section class="acao" aria-label="Produtos em uso">
+      <div class="acao-track">
+        <figure class="acao-col" data-drift="-40">
+          <img src="assets/fotos/isca-praia.webp" alt="Pescador mostrando isca soft na praia" loading="lazy">
+          <img src="assets/fotos/linha-carretilha.webp" alt="Linha multifilamento ao lado da carretilha" loading="lazy">
+        </figure>
+        <figure class="acao-col" data-drift="40">
+          <img src="assets/fotos/softbait.webp" alt="Soft bait na mão do pescador" loading="lazy">
+          <img src="assets/fotos/anzois-pacote.webp" alt="Pacotes de anzóis" loading="lazy">
+        </figure>
+        <div class="acao-copy">
+          <p class="eyebrow light rv"><span class="dot"></span> Na beira d'água</p>
+          <h2 class="rv" style="--d:.08s">Feito pra onde a pesca acontece.</h2>
+          <p class="rv" style="--d:.16s">Produtos pensados pra quem está na beira d'água. Acompanhe os bastidores e os lançamentos nas nossas redes.</p>
+          <div class="social rv" style="--d:.24s">
+            <a href="https://www.instagram.com/chumbada_oficial/" target="_blank" rel="noopener" class="soc">
+              <svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>
+              <span><strong>@chumbada_oficial</strong><small>Instagram</small></span>
             </a>
-          </div>
-          <div class="hub-card-image">
-            <div class="hub-image-wrapper">
-              <i class="ph ph-folders"></i>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="lojista" class="section bg-light">
-      <div class="container">
-        <div class="grid-2" style="align-items: center;">
-          <div data-aos="fade-right">
-            <span class="badge" style="background: #e0f2fe; color: #0284c7;">B2B Exclusivo</span>
-            <h2 class="section-title" style="text-align: left; margin-top: 10px;">Abasteça sua Loja</h2>
-            <p style="font-size: 1.1rem; color: var(--gray); margin-bottom: 20px;">
-              Oferecemos condições especiais e produtos de alto giro. Pedido mínimo de R$ 900,00.
-            </p>
-            <a href="https://chumbadas.com.br/" target="_blank" class="btn btn-primary">
-              Fazer Cadastro / Login
-            </a>
-          </div>
-          <div data-aos="fade-left">
-             <img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/0000.jpg?v=1756762787" alt="Kit Lojista" style="border-radius: 20px; box-shadow: var(--shadow); width: 100%;">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="ondecomprar" class="section">
-      <div class="container">
-        <h2 class="section-title">Onde Comprar</h2>
-        <div style="max-width: 600px; margin: 0 auto;">
-          <div class="card" data-aos="fade-up">
-            <div class="card-body" style="text-align: center;">
-              <i class="ph ph-shopping-cart" style="font-size: 3rem; color: var(--accent); margin-bottom: 10px;"></i>
-              <h3>Compre Online</h3>
-              <p>Adquira nossos produtos através dos marketplaces parceiros.</p>
-              <div style="margin-top: 15px; display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                <a href="https://lista.mercadolivre.com.br/chumbada-oficial" target="_blank" class="btn btn-outline">Mercado Livre</a>
-                <a href="https://shopee.com.br/search?keyword=chumbada%20oficial" target="_blank" class="btn btn-outline">Shopee</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-col">
-            <img src="https://cdn.shopify.com/s/files/1/0454/5845/6736/files/Logo-chumbada-OFICIAL-horizonatal-2_f758e5db-514c-4559-8549-94cd56f40ef7.png?v=1756759937" alt="Chumbada Oficial" style="opacity: 0.8; height: 30px; margin-bottom: 20px; filter: brightness(0) invert(1);">
-            <p>Performance para qualquer pescaria. Produtos desenvolvidos para garantir a melhor experiência na água.</p>
-          </div>
-          
-          <div class="footer-col">
-            <h4>Navegação</h4>
-            <a href="#ondecomprar">Onde Comprar</a>
-            <a href="#catalogos">Catálogos</a>
-            <a href="#midia">Redes Sociais</a>
-          </div>
-
-          <div class="footer-col">
-            <h4>Contato</h4>
-            <p><i class="ph ph-envelope"></i> comercial@chumbada.com.br</p>
-            <p><i class="ph ph-whatsapp-logo"></i> (11) 94190-0602</p>
-            <p><i class="ph ph-map-pin"></i> Santana de Parnaíba, SP</p>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <div>© <span id="year"></span> Chumbada Oficial.</div>
-          <div>
-            <a href="https://mega.nz/folder/2E4yXYjS#kH-LH1_WCGvcJ5Q3eyrYIw" target="_blank" style="color: var(--accent);">
-              <i class="ph ph-image"></i> Baixar Artes Oficiais
+            <a href="https://www.youtube.com/@CHUMBADAOFICIAL" target="_blank" rel="noopener" class="soc">
+              <svg class="i" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9 5 3-5 3z" fill="currentColor"/></svg>
+              <span><strong>Chumbada Oficial</strong><small>YouTube</small></span>
             </a>
           </div>
         </div>
+        <figure class="acao-col" data-drift="-30">
+          <img src="assets/fotos/isca-camarao.webp" alt="Isca de camarão articulado" loading="lazy">
+          <img src="assets/fotos/pescador-bone.webp" alt="Pescador com boné Chumbada Oficial" loading="lazy">
+        </figure>
       </div>
-    </footer>
+    </section>
+
+    <!-- LOJISTA -->
+    <section class="sec lojista" id="lojista">
+      <div class="wrap lojista-in">
+        <div class="lojista-copy">
+          <p class="eyebrow rv"><span class="dot"></span> Atacado para lojistas</p>
+          <h2 class="rv" style="--d:.08s">Abasteça sua loja<br>direto da fábrica.</h2>
+          <p class="sec-lead rv" style="--d:.16s">Produtos de alto giro com condições especiais pra quem revende. Veja como começar:</p>
+
+          <ol class="steps">
+            <li class="step rv" style="--d:.1s">
+              <span class="step-n">1</span>
+              <div><h3>Faça seu cadastro</h3><p>Crie sua conta de lojista na nossa loja B2B.</p></div>
+            </li>
+            <li class="step rv" style="--d:.2s">
+              <span class="step-n">2</span>
+              <div><h3>Monte seu pedido</h3><p>Escolha entre todas as linhas. Pedido mínimo de <strong>R$&nbsp;900,00</strong>.</p></div>
+            </li>
+            <li class="step rv" style="--d:.3s">
+              <span class="step-n">3</span>
+              <div><h3>Ficou com dúvida?</h3><p>Fale com o comercial pelo WhatsApp que a gente te ajuda.</p></div>
+            </li>
+          </ol>
+
+          <div class="lojista-btns rv" style="--d:.35s">
+            <a class="btn btn-orange btn-lg" href="https://chumbadas.com.br/" target="_blank" rel="noopener">Fazer cadastro / login <svg class="i" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="btn btn-ghost btn-lg" href="https://wa.me/5511941900602?text=Ol%C3%A1!%20Tenho%20uma%20loja%20e%20quero%20revender%20Chumbada%20Oficial." target="_blank" rel="noopener">
+              <svg class="i" viewBox="0 0 24 24"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z" fill="currentColor" stroke="none"/></svg>
+              Falar com o comercial
+            </a>
+          </div>
+        </div>
+
+        <div class="lojista-visual rv" style="--d:.1s">
+          <div class="min-card" aria-label="Pedido mínimo de 900 reais">
+            <small>Pedido mínimo</small>
+            <strong>R$&nbsp;<span data-count="900">900</span></strong>
+          </div>
+          <img class="lv-a" src="assets/fotos/bolsa-iscas.webp" alt="Pescador com bolsa de iscas" loading="lazy">
+          <img class="lv-b" src="assets/fotos/anzois-fundo.webp" alt="Pacotes de anzóis" loading="lazy">
+          <a class="artes" href="https://mega.nz/folder/2E4yXYjS#kH-LH1_WCGvcJ5Q3eyrYIw" target="_blank" rel="noopener">
+            <svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>
+            <span><strong>Artes oficiais</strong><small>Fotos e logos pra divulgar na sua loja</small></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONDE COMPRAR -->
+    <section class="sec comprar" id="comprar">
+      <div class="wrap">
+        <div class="sec-head center">
+          <p class="eyebrow rv"><span class="dot"></span> Para o pescador</p>
+          <h2 class="rv" style="--d:.08s">Onde comprar.</h2>
+          <p class="sec-lead rv" style="--d:.16s">Compre os produtos oficiais nos nossos marketplaces parceiros e receba em casa.</p>
+        </div>
+        <div class="mkts">
+          <a class="mkt mkt-ml rv" href="https://lista.mercadolivre.com.br/chumbada-oficial" target="_blank" rel="noopener">
+            <span class="mkt-name">Mercado Livre</span>
+            <span class="mkt-sub">Ver produtos Chumbada Oficial</span>
+            <span class="mkt-go"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+          <a class="mkt mkt-sh rv" style="--d:.08s" href="https://shopee.com.br/search?keyword=chumbada%20oficial" target="_blank" rel="noopener">
+            <span class="mkt-name">Shopee</span>
+            <span class="mkt-sub">Ver produtos Chumbada Oficial</span>
+            <span class="mkt-go"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+          </a>
+        </div>
+        <p class="comprar-note rv">Tem uma loja de pesca? <a href="#lojista">Compre no atacado →</a></p>
+      </div>
+    </section>
   </main>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 800, once: true, offset: 100 });
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- CONTATO / RODAPÉ -->
+  <footer class="foot" id="contato">
+    <div class="wrap">
+      <div class="foot-cta">
+        <img class="foot-selo" src="assets/selo.webp" alt="" loading="lazy">
+        <div>
+          <h2>Bora conversar?</h2>
+          <p>Atendimento comercial para lojistas e distribuidores.</p>
+        </div>
+        <a class="btn btn-orange btn-lg" href="https://wa.me/5511941900602" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
 
-    // Menu Mobile Logic
-    const btnMobile = document.querySelector('.menu-btn-mobile');
-    const closeMenu = document.querySelector('.close-menu');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('menuOverlay');
-    const links = document.querySelectorAll('.mobile-link');
+      <div class="foot-grid">
+        <div>
+          <img src="assets/logo.webp" alt="Chumbada Oficial" class="foot-logo" loading="lazy" width="150" height="61">
+          <p>Performance para qualquer pescaria. Produtos desenvolvidos para garantir a melhor experiência na água.</p>
+        </div>
+        <div>
+          <h4>Navegue</h4>
+          <a href="#linhas">Produtos</a>
+          <a href="https://catalogos.chumbada.com.br/" target="_blank" rel="noopener">Todos os catálogos</a>
+          <a href="#lojista">Para lojistas</a>
+          <a href="#comprar">Onde comprar</a>
+        </div>
+        <div>
+          <h4>Contato</h4>
+          <a href="https://wa.me/5511941900602" target="_blank" rel="noopener">(11) 94190-0602</a>
+          <a href="mailto:comercial@chumbada.com.br">comercial@chumbada.com.br</a>
+          <span>Santana de Parnaíba, SP</span>
+        </div>
+        <div>
+          <h4>Redes</h4>
+          <a href="https://www.instagram.com/chumbada_oficial/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.youtube.com/@CHUMBADAOFICIAL" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://mega.nz/folder/2E4yXYjS#kH-LH1_WCGvcJ5Q3eyrYIw" target="_blank" rel="noopener">Artes oficiais</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="ano">2026</span> Chumbada Oficial</span>
+        <a href="#topo" class="to-top">Voltar ao topo ↑</a>
+      </div>
+    </div>
+  </footer>
 
-    function toggleMenu() {
-      mobileMenu.classList.toggle('active');
-      overlay.classList.toggle('active');
-    }
+  <a class="wa-float" href="https://wa.me/5511941900602" target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2.2a9.8 9.8 0 0 0-8.4 14.8L2.2 21.8l4.9-1.3A9.8 9.8 0 1 0 12 2.2zm5.7 13.9c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a17 17 0 0 1-1.8-.7 13.6 13.6 0 0 1-5.2-4.6c-.4-.5-1-1.5-1-2.8s.7-2 1-2.3a1 1 0 0 1 .7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.7 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.4.2.5.3.1.1.1.7-.1 1.4z"/></svg>
+  </a>
 
-    btnMobile.addEventListener('click', toggleMenu);
-    closeMenu.addEventListener('click', toggleMenu);
-    overlay.addEventListener('click', toggleMenu);
-    links.forEach(link => link.addEventListener('click', toggleMenu));
-  </script>
+  <script src="assets/site.js" defer></script>
 </body>
 </html>
