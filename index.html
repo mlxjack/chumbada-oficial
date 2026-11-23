@@ -16,6 +16,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/fotos/praia-pesca.webp">
   <link rel="stylesheet" href="assets/site.css">
+
+  <!-- Google tag (Google Ads AW-829316526) + conversões de lojista -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-829316526"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-829316526');
+    // Cliques que contam como lead: WhatsApp comercial e cadastro na loja B2B
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a) return;
+      var h = a.href;
+      if (h.indexOf('wa.me/') !== -1) {
+        gtag('event', 'conversion', { send_to: 'AW-829316526/SFGBCPDOmL4dEK67uYsD' });
+      } else if (/^https:\/\/(www\.)?chumbadas\.com\.br/.test(h)) {
+        gtag('event', 'conversion', { send_to: 'AW-829316526/GGC3CPPOmL4dEK67uYsD' });
+      }
+    }, true);
+  </script>
 </head>
 <body>
   <a class="skip" href="#linhas">Pular para os produtos</a>
